@@ -1,0 +1,49 @@
+{
+  "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/prompt-24-08-10.json",
+  "title": "unicloud Prompt 24-08-10",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URI of the schema definition."
+    },
+    "params": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of parameters."
+    },
+    "context": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the context element."
+          },
+          "content": {
+            "type": "string",
+            "description": "Content that uses a parameter from params."
+          }
+        },
+        "required": ["description", "content"],
+        "description": "A context element containing a description and associated content.",
+        "additionalProperties": false
+      },
+      "description": "An array of context elements."
+    },
+    "prompt": {
+      "type": "string",
+      "description": "The prompt for generating the output."
+    },
+    "schema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "description": "The schema definition for a list of recipes."
+    }
+  },
+  "description": "A schema for unicloud prompts.",
+  "additionalProperties": false
+}
