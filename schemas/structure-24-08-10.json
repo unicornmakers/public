@@ -4,6 +4,10 @@
   "title": "unicloud Structure 24-8-10",
   "type": "object",
   "properties": {
+    "$schema": {
+      "type": "string",
+      "format": "uri"
+    },
     "forms": {
       "type": ["array", "object"],
       "items": {
