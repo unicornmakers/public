@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "properties": {
+    "forms": {
+      "type": ["array", "object"],
+      "items": {
+        "type": "string"
+      }
+    },
+    "objects": {
+      "type": ["array", "object"],
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "forms": {
+            "type": ["array", "object"],
+            "items": {
+              "type": "string"
+            }
+          },
+          "objects": {
+            "$ref": "#/properties/objects"
+          },
+          "relations": {
+            "type": "object",
+            "patternProperties": {
+              ".*": {
+                "type": "object",
+                "properties": {
+                  "forms": {
+                    "type": ["array", "object"],
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "targets": {
+                    "type": ["array", "object"],
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["targets"],
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
