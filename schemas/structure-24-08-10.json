@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/structure-24-08-10.json",
-  "title": "unicloud Structure 24-8-10",
+  "title": "unicloud Structure 24-08-10",
   "type": "object",
   "properties": {
     "$schema": {
@@ -16,6 +16,9 @@
     },
     "objects": {
       "type": ["array", "object"],
+      "items": {
+        "type": "string"
+      },
       "additionalProperties": {
         "type": "object",
         "properties": {
@@ -41,7 +44,7 @@
                     }
                   },
                   "targets": {
-                    "type": ["array", "object"],
+                    "type": ["array"],
                     "items": {
                       "type": "string"
                     }
