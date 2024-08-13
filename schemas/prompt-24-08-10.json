@@ -53,7 +53,7 @@
           },
           "nonNegativeIntegerDefault0": {
               "allOf": [
-                  { "$ref": "#/definitions/nonNegativeInteger" },
+                  { "$ref": "#/properties/schema/definitions/nonNegativeInteger" },
                   { "default": 0 }
               ]
           },
@@ -127,8 +127,8 @@
           "exclusiveMinimum": {
               "type": "number"
           },
-          "maxLength": { "$ref": "#/definitions/nonNegativeInteger" },
-          "minLength": { "$ref": "#/definitions/nonNegativeIntegerDefault0" },
+          "maxLength": { "$ref": "#/properties/schema/definitions/nonNegativeInteger" },
+          "minLength": { "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0" },
           "pattern": {
               "type": "string",
               "format": "regex"
@@ -137,20 +137,20 @@
           "items": {
               "anyOf": [
                   { "$ref": "#" },
-                  { "$ref": "#/definitions/schemaArray" }
+                  { "$ref": "#/properties/schema/definitions/schemaArray" }
               ],
               "default": true
           },
-          "maxItems": { "$ref": "#/definitions/nonNegativeInteger" },
-          "minItems": { "$ref": "#/definitions/nonNegativeIntegerDefault0" },
+          "maxItems": { "$ref": "#/properties/schema/definitions/nonNegativeInteger" },
+          "minItems": { "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0" },
           "uniqueItems": {
               "type": "boolean",
               "default": false
           },
           "contains": { "$ref": "#" },
-          "maxProperties": { "$ref": "#/definitions/nonNegativeInteger" },
-          "minProperties": { "$ref": "#/definitions/nonNegativeIntegerDefault0" },
-          "required": { "$ref": "#/definitions/stringArray" },
+          "maxProperties": { "$ref": "#/properties/schema/definitions/nonNegativeInteger" },
+          "minProperties": { "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0" },
+          "required": { "$ref": "#/properties/schema/definitions/stringArray" },
           "additionalProperties": { "$ref": "#" },
           "definitions": {
               "type": "object",
@@ -173,7 +173,7 @@
               "additionalProperties": {
                   "anyOf": [
                       { "$ref": "#" },
-                      { "$ref": "#/definitions/stringArray" }
+                      { "$ref": "#/properties/schema/definitions/stringArray" }
                   ]
               }
           },
@@ -187,10 +187,10 @@
           },
           "type": {
               "anyOf": [
-                  { "$ref": "#/definitions/simpleTypes" },
+                  { "$ref": "#/properties/schema/definitions/simpleTypes" },
                   {
                       "type": "array",
-                      "items": { "$ref": "#/definitions/simpleTypes" },
+                      "items": { "$ref": "#/properties/schema/definitions/simpleTypes" },
                       "minItems": 1,
                       "uniqueItems": true
                   }
@@ -202,9 +202,9 @@
           "if": { "$ref": "#" },
           "then": { "$ref": "#" },
           "else": { "$ref": "#" },
-          "allOf": { "$ref": "#/definitions/schemaArray" },
-          "anyOf": { "$ref": "#/definitions/schemaArray" },
-          "oneOf": { "$ref": "#/definitions/schemaArray" },
+          "allOf": { "$ref": "#/properties/schema/definitions/schemaArray" },
+          "anyOf": { "$ref": "#/properties/schema/definitions/schemaArray" },
+          "oneOf": { "$ref": "#/properties/schema/definitions/schemaArray" },
           "not": { "$ref": "#" }
       },
       "default": true
