@@ -39,7 +39,7 @@
       "type": "string",
       "description": "The prompt for generating the output."
     },
-    "schema":{
+    "schema": {
       "title": "Core schema meta-schema",
       "definitions": {
           "schemaArray": {

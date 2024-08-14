@@ -7,6 +7,19 @@
       "type": "string",
       "format": "uri"
     },
+    "costs": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "number"
+        },
+        "forms": {
+          "type": "number"
+        }
+      },
+      "required": ["authors", "license", "version"],
+      "additionalProperties": false
+    },
     "forms": {
       "type": ["array", "object"],
       "items": {
@@ -22,6 +35,12 @@
         }
       }
     },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "objects": {
       "type": ["array", "object"],
       "items": {
@@ -30,6 +49,9 @@
       "properties": {
         "forms": {
           "$ref": "#/properties/forms"
+        },
+        "messages": {
+          "$ref": "#/properties/messages"
         },
         "objects": {
           "$ref": "#/properties/objects"
@@ -42,6 +64,9 @@
               "properties": {
                 "forms": {
                   "$ref": "#/properties/forms"
+                },
+                "messages": {
+                  "$ref": "#/properties/messages"
                 },
                 "targets": {
                   "type": ["array"],
