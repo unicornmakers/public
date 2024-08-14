@@ -9,13 +9,6 @@
       "format": "uri",
       "description": "The URI of the schema definition."
     },
-    "params": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "A list of parameters."
-    },
     "context": {
       "type": "array",
       "items": {
