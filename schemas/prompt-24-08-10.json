@@ -41,12 +41,14 @@
       "description": "The prompt for generating the output."
     },
     "schema": {
-      "title": "Core schema meta-schema",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "$id": "http://json-schema.org/draft-07/schema#",
+      "title": "Core prompt schema meta-schema",
       "definitions": {
           "schemaArray": {
               "type": "array",
               "minItems": 1,
-              "items": { "$ref": "#" }
+              "items": { "$ref": "#/properties/schema" }
           },
           "nonNegativeInteger": {
               "type": "integer",
@@ -134,10 +136,10 @@
               "type": "string",
               "format": "regex"
           },
-          "additionalItems": { "$ref": "#" },
+          "additionalItems": { "$ref": "#/properties/schema" },
           "items": {
               "anyOf": [
-                  { "$ref": "#" },
+                  { "$ref": "#/properties/schema" },
                   { "$ref": "#/properties/schema/definitions/schemaArray" }
               ],
               "default": true
@@ -148,24 +150,24 @@
               "type": "boolean",
               "default": false
           },
-          "contains": { "$ref": "#" },
+          "contains": { "$ref": "#/properties/schema" },
           "maxProperties": { "$ref": "#/properties/schema/definitions/nonNegativeInteger" },
           "minProperties": { "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0" },
           "required": { "$ref": "#/properties/schema/definitions/stringArray" },
-          "additionalProperties": { "$ref": "#" },
+          "additionalProperties": { "$ref": "#/properties/schema" },
           "definitions": {
               "type": "object",
-              "additionalProperties": { "$ref": "#" },
+              "additionalProperties": { "$ref": "#/properties/schema" },
               "default": {}
           },
           "properties": {
               "type": "object",
-              "additionalProperties": { "$ref": "#" },
+              "additionalProperties": { "$ref": "#/properties/schema" },
               "default": {}
           },
           "patternProperties": {
               "type": "object",
-              "additionalProperties": { "$ref": "#" },
+              "additionalProperties": { "$ref": "#/properties/schema" },
               "propertyNames": { "format": "regex" },
               "default": {}
           },
@@ -173,12 +175,12 @@
               "type": "object",
               "additionalProperties": {
                   "anyOf": [
-                      { "$ref": "#" },
+                      { "$ref": "#/properties/schema" },
                       { "$ref": "#/properties/schema/definitions/stringArray" }
                   ]
               }
           },
-          "propertyNames": { "$ref": "#" },
+          "propertyNames": { "$ref": "#/properties/schema" },
           "const": true,
           "enum": {
               "type": "array",
@@ -200,16 +202,16 @@
           "format": { "type": "string" },
           "contentMediaType": { "type": "string" },
           "contentEncoding": { "type": "string" },
-          "if": { "$ref": "#" },
-          "then": { "$ref": "#" },
-          "else": { "$ref": "#" },
+          "if": { "$ref": "#/properties/schema" },
+          "then": { "$ref": "#/properties/schema" },
+          "else": { "$ref": "#/properties/schema" },
           "allOf": { "$ref": "#/properties/schema/definitions/schemaArray" },
           "anyOf": { "$ref": "#/properties/schema/definitions/schemaArray" },
           "oneOf": { "$ref": "#/properties/schema/definitions/schemaArray" },
-          "not": { "$ref": "#" }
+          "not": { "$ref": "#/properties/schema" }
       },
       "default": true
-    }
+  }
   },
   "description": "A schema for unicloud prompts.",
   "additionalProperties": false
