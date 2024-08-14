@@ -18,7 +18,7 @@
           "type": "number"
         }
       },
-      "oneOf": [
+      "anyOf": [
         {
           "required": ["forms"]
         },
