@@ -42,6 +42,13 @@
         "type": "string"
       },
       "properties": {
+        "prompts": {
+          "type": ["array"],
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
         "cost": {
           "type": "number"
         }
