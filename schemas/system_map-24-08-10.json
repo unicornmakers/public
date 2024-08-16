@@ -21,31 +21,43 @@
           ]
         }
       ],
+      "description": "Costs for different job types (in credits; decimals are ignored)",
       "properties": {
         "forms": {
+          "description": "Cost for form generation",
+          "minimum": 0,
           "type": "number"
         },
         "messages": {
+          "description": "Cost for message generation",
+          "minimum": 0,
           "type": "number"
         }
       },
       "type": "object"
     },
     "forms": {
+      "description": "Forms definitions",
       "items": {
         "type": "string"
       },
       "patternProperties": {
         ".*": {
           "additionalProperties": false,
+          "description": "Form definition",
           "properties": {
             "cost": {
+              "description": "Cost for generating this form. Replaces the base cost.",
+              "minimum": 0,
               "type": "number"
             },
             "generative": {
+              "default": true,
+              "description": "Whether AI is allowed to make changes to this form",
               "type": "boolean"
             },
             "prompts": {
+              "description": "If generative, prompts allowed for this form. If not defined, the AI will look for a prompt with the same name as the form.",
               "items": {
                 "type": "string"
               },
@@ -64,18 +76,23 @@
       ]
     },
     "messages": {
+      "description": "Message definitions",
       "items": {
         "type": "string"
       },
       "patternProperties": {
         ".*": {
           "additionalProperties": false,
+          "description": "Message definition",
           "properties": {
             "cost": {
+              "description": "Cost for generating this message. Replaces the base cost.",
+              "minimum": 0,
               "type": "number"
             },
             "prompts": {
               "items": {
+                "description": "Prompt for this message. If not defined, the AI will look for a prompt with the same name as the message.",
                 "type": "string"
               },
               "minItems": 1,
@@ -111,6 +128,7 @@
             },
             "relations": {
               "additionalProperties": false,
+              "description": "Relations between objects",
               "patternProperties": {
                 ".*": {
                   "additionalProperties": false,
@@ -122,6 +140,7 @@
                       "$ref": "#/properties/messages"
                     },
                     "targets": {
+                      "description": "Objects that can be targeted by this relation",
                       "items": {
                         "type": "string"
                       },
