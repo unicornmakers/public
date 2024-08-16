@@ -42,6 +42,9 @@
             "cost": {
               "type": "number"
             },
+            "generative": {
+              "type": "boolean"
+            },
             "prompts": {
               "items": {
                 "type": "string"
