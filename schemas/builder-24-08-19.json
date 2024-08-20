@@ -37,14 +37,12 @@
     },
     "messages": {
       "description": "Message definitions",
-      "patternProperties": {
-        ".*": {
-          "additionalProperties": false,
-          "description": "Prompt that can be called as a message",
-          "type": "string"
-        }
+      "items": {
+        "description": "Prompt that can be called as a message",
+        "type": "string"
       },
-      "type": "object"
+      "minItems": 1,
+      "type": "array"
     },
     "objects": {
       "patternProperties": {
