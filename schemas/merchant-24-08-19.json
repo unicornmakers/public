@@ -32,11 +32,13 @@
               "description": "Costs for different job types (in credits; decimals are ignored)",
               "properties": {
                 "forms": {
+                  "default": 1,
                   "description": "Cost for form generation",
                   "minimum": 0,
                   "type": "number"
                 },
                 "messages": {
+                  "default": 1,
                   "description": "Cost for message generation",
                   "minimum": 0,
                   "type": "number"
@@ -45,7 +47,6 @@
               "type": "object"
             },
             "specific": {
-              "type": "object",
               "patternProperties": {
                 ".*": {
                   "additionalProperties": false,
@@ -54,6 +55,7 @@
                     "cost": {
                       "description": "Cost for this job",
                       "minimum": 0,
+                      "default": 0,
                       "type": "number"
                     }
                   },
@@ -62,7 +64,8 @@
                   ],
                   "type": "number"
                 }
-              }
+              },
+              "type": "object"
             }
           },
           "type": "object"
