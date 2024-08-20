@@ -40,14 +40,8 @@
       "patternProperties": {
         ".*": {
           "additionalProperties": false,
-          "description": "Message definition",
-          "properties": {
-            "prompt": {
-              "description": "The prompt for generating the output.",
-              "type": "string"
-            }
-          },
-          "type": "object"
+          "description": "Prompt that can be called as a message",
+          "type": "string"
         }
       },
       "type": "object"
