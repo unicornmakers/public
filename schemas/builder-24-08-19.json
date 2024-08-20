@@ -37,12 +37,26 @@
     },
     "messages": {
       "description": "Message definitions",
-      "items": {
-        "description": "Prompt that can be called as a message",
-        "type": "string"
+      "patternProperties": {
+        ".*": {
+          "additionalProperties": false,
+          "description": "Message definition",
+          "properties": {
+            "prompts": {
+              "description": "Prompts allowed for this message. If not defined, the AI will look for a prompt with the same name as the message.",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": [
+                "array"
+              ]
+            }
+          },
+          "type": "object"
+        }
       },
-      "minItems": 1,
-      "type": "array"
+      "type": "object"
     },
     "objects": {
       "patternProperties": {
