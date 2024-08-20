@@ -1,0 +1,93 @@
+{
+  "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/merchant-24-08-19.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "format": "uri",
+      "type": "string"
+    },
+    "userWallets": {
+      "additionalProperties": false,
+      "description": "User wallets",
+      "properties": {
+        "costs": {
+          "additionalProperties": false,
+          "description": "Costs for user wallets",
+          "properties": {
+            "base": {
+              "additionalProperties": false,
+              "anyOf": [
+                {
+                  "required": [
+                    "forms"
+                  ]
+                },
+                {
+                  "required": [
+                    "messages"
+                  ]
+                }
+              ],
+              "description": "Costs for different job types (in credits; decimals are ignored)",
+              "properties": {
+                "forms": {
+                  "description": "Cost for form generation",
+                  "minimum": 0,
+                  "type": "number"
+                },
+                "messages": {
+                  "description": "Cost for message generation",
+                  "minimum": 0,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "specific": {
+              "type": "object",
+              "patternProperties": {
+                ".*": {
+                  "additionalProperties": false,
+                  "description": "Cost for a specific job",
+                  "properties": {
+                    "cost": {
+                      "description": "Cost for this job",
+                      "minimum": 0,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "cost"
+                  ],
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "type": "object"
+        },
+        "enabled": {
+          "default": false,
+          "description": "Whether user wallets are enabled",
+          "type": "boolean"
+        },
+        "stripeIntegration": {
+          "additionalProperties": false,
+          "description": "Stripe integration settings",
+          "properties": {
+            "enabled": {
+              "default": false,
+              "description": "Whether the Stripe integration is enabled",
+              "type": "boolean"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "unicloud Merchant Schema 24-08-19",
+  "type": "object"
+}

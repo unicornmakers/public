@@ -1,0 +1,25 @@
+{
+  "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/locksmith-24-08-19.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "format": "uri",
+      "type": "string"
+    },
+    "cognitoIntegration": {
+      "additionalProperties": false,
+      "description": "Cognito integration settings",
+      "properties": {
+        "enabled": {
+          "default": false,
+          "description": "Whether Cognito integration is enabled",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "unicloud Locksmith Schema 24-08-19",
+  "type": "object"
+}

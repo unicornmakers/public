@@ -1,0 +1,287 @@
+{
+  "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/prompt-24-08-19.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "description": "A schema for unicloud prompts.",
+  "properties": {
+    "$schema": {
+      "description": "The URI of the schema definition.",
+      "format": "uri",
+      "type": "string"
+    },
+    "context": {
+      "description": "An array of context elements.",
+      "items": {
+        "additionalProperties": false,
+        "description": "A context element containing a description and associated content.",
+        "properties": {
+          "content": {
+            "description": "Content that uses a parameter from params.",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the context element.",
+            "type": "string"
+          }
+        },
+        "required": [
+          "description",
+          "content"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "prompt": {
+      "description": "The prompt for generating the output.",
+      "type": "string"
+    },
+    "schema": {
+      "$id": "http://json-schema.org/draft-07/schema#",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "default": true,
+      "definitions": {
+        "nonNegativeInteger": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "nonNegativeIntegerDefault0": {
+          "allOf": [
+            {
+              "$ref": "#/properties/schema/definitions/nonNegativeInteger"
+            },
+            {
+              "default": 0
+            }
+          ]
+        },
+        "schemaArray": {
+          "items": {
+            "$ref": "#/properties/schema"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "simpleTypes": {
+          "enum": [
+            "array",
+            "boolean",
+            "integer",
+            "null",
+            "number",
+            "object",
+            "string"
+          ]
+        },
+        "stringArray": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "properties": {
+        "$comment": {
+          "type": "string"
+        },
+        "$id": {
+          "format": "uri-reference",
+          "type": "string"
+        },
+        "$ref": {
+          "format": "uri-reference",
+          "type": "string"
+        },
+        "$schema": {
+          "format": "uri",
+          "type": "string"
+        },
+        "additionalItems": {
+          "$ref": "#/properties/schema"
+        },
+        "additionalProperties": {
+          "$ref": "#/properties/schema"
+        },
+        "allOf": {
+          "$ref": "#/properties/schema/definitions/schemaArray"
+        },
+        "anyOf": {
+          "$ref": "#/properties/schema/definitions/schemaArray"
+        },
+        "const": true,
+        "contains": {
+          "$ref": "#/properties/schema"
+        },
+        "contentEncoding": {
+          "type": "string"
+        },
+        "contentMediaType": {
+          "type": "string"
+        },
+        "default": true,
+        "definitions": {
+          "additionalProperties": {
+            "$ref": "#/properties/schema"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "dependencies": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "$ref": "#/properties/schema"
+              },
+              {
+                "$ref": "#/properties/schema/definitions/stringArray"
+              }
+            ]
+          },
+          "type": "object"
+        },
+        "description": {
+          "type": "string"
+        },
+        "else": {
+          "$ref": "#/properties/schema"
+        },
+        "enum": {
+          "items": true,
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "examples": {
+          "items": true,
+          "type": "array"
+        },
+        "exclusiveMaximum": {
+          "type": "number"
+        },
+        "exclusiveMinimum": {
+          "type": "number"
+        },
+        "format": {
+          "type": "string"
+        },
+        "if": {
+          "$ref": "#/properties/schema"
+        },
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "#/properties/schema"
+            },
+            {
+              "$ref": "#/properties/schema/definitions/schemaArray"
+            }
+          ],
+          "default": true
+        },
+        "maximum": {
+          "type": "number"
+        },
+        "maxItems": {
+          "$ref": "#/properties/schema/definitions/nonNegativeInteger"
+        },
+        "maxLength": {
+          "$ref": "#/properties/schema/definitions/nonNegativeInteger"
+        },
+        "maxProperties": {
+          "$ref": "#/properties/schema/definitions/nonNegativeInteger"
+        },
+        "minimum": {
+          "type": "number"
+        },
+        "minItems": {
+          "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0"
+        },
+        "minLength": {
+          "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0"
+        },
+        "minProperties": {
+          "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0"
+        },
+        "multipleOf": {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        },
+        "not": {
+          "$ref": "#/properties/schema"
+        },
+        "oneOf": {
+          "$ref": "#/properties/schema/definitions/schemaArray"
+        },
+        "pattern": {
+          "format": "regex",
+          "type": "string"
+        },
+        "patternProperties": {
+          "additionalProperties": {
+            "$ref": "#/properties/schema"
+          },
+          "default": {},
+          "propertyNames": {
+            "format": "regex"
+          },
+          "type": "object"
+        },
+        "properties": {
+          "additionalProperties": {
+            "$ref": "#/properties/schema"
+          },
+          "default": {},
+          "type": "object"
+        },
+        "propertyNames": {
+          "$ref": "#/properties/schema"
+        },
+        "readOnly": {
+          "default": false,
+          "type": "boolean"
+        },
+        "required": {
+          "$ref": "#/properties/schema/definitions/stringArray"
+        },
+        "then": {
+          "$ref": "#/properties/schema"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "$ref": "#/properties/schema/definitions/simpleTypes"
+            },
+            {
+              "items": {
+                "$ref": "#/properties/schema/definitions/simpleTypes"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            }
+          ]
+        },
+        "uniqueItems": {
+          "default": false,
+          "type": "boolean"
+        },
+        "writeOnly": {
+          "default": false,
+          "type": "boolean"
+        }
+      },
+      "title": "Core prompt schema meta-schema",
+      "type": [
+        "object",
+        "boolean"
+      ]
+    }
+  },
+  "title": "unicloud Prompt 24-08-19",
+  "type": "object"
+}

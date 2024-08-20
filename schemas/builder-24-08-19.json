@@ -1,5 +1,5 @@
 {
-  "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/system_map-24-08-10.json",
+  "$id": "https://raw.githubusercontent.com/unicornmakers/public/main/schemas/builder-24-08-19.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "properties": {
@@ -7,50 +7,13 @@
       "format": "uri",
       "type": "string"
     },
-    "costs": {
-      "additionalProperties": false,
-      "anyOf": [
-        {
-          "required": [
-            "forms"
-          ]
-        },
-        {
-          "required": [
-            "messages"
-          ]
-        }
-      ],
-      "description": "Costs for different job types (in credits; decimals are ignored)",
-      "properties": {
-        "forms": {
-          "description": "Cost for form generation",
-          "minimum": 0,
-          "type": "number"
-        },
-        "messages": {
-          "description": "Cost for message generation",
-          "minimum": 0,
-          "type": "number"
-        }
-      },
-      "type": "object"
-    },
     "forms": {
       "description": "Forms definitions",
-      "items": {
-        "type": "string"
-      },
       "patternProperties": {
         ".*": {
           "additionalProperties": false,
           "description": "Form definition",
           "properties": {
-            "cost": {
-              "description": "Cost for generating this form. Replaces the base cost.",
-              "minimum": 0,
-              "type": "number"
-            },
             "generative": {
               "default": true,
               "description": "Whether AI is allowed to make changes to this form",
@@ -70,49 +33,26 @@
           "type": "object"
         }
       },
-      "type": [
-        "array",
-        "object"
-      ]
+      "type": "object"
     },
     "messages": {
       "description": "Message definitions",
-      "items": {
-        "type": "string"
-      },
       "patternProperties": {
         ".*": {
           "additionalProperties": false,
           "description": "Message definition",
           "properties": {
-            "cost": {
-              "description": "Cost for generating this message. Replaces the base cost.",
-              "minimum": 0,
-              "type": "number"
-            },
-            "prompts": {
-              "items": {
-                "description": "Prompt for this message. If not defined, the AI will look for a prompt with the same name as the message.",
-                "type": "string"
-              },
-              "minItems": 1,
-              "type": [
-                "array"
-              ]
+            "prompt": {
+              "description": "The prompt for generating the output.",
+              "type": "string"
             }
           },
           "type": "object"
         }
       },
-      "type": [
-        "array",
-        "object"
-      ]
+      "type": "object"
     },
     "objects": {
-      "items": {
-        "type": "string"
-      },
       "patternProperties": {
         ".*": {
           "additionalProperties": false,
@@ -161,12 +101,9 @@
           "type": "object"
         }
       },
-      "type": [
-        "array",
-        "object"
-      ]
+      "type": "object"
     }
   },
-  "title": "unicloud Structure 24-08-10",
+  "title": "unicloud Builder Schema 24-08-19",
   "type": "object"
 }
