@@ -7,6 +7,17 @@
       "format": "uri",
       "type": "string"
     },
+    "languages": {
+      "description": "Language definitions. The first one is the default language.",
+      "type": "array",
+      "default": [
+        "en-US"
+      ],
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2}-[A-Z]{2}$"
+      }
+    },
     "forms": {
       "description": "Forms definitions",
       "patternProperties": {
