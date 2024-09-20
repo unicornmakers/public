@@ -25,6 +25,10 @@
           "additionalProperties": false,
           "description": "Form definition",
           "properties": {
+            "model": {
+              "description": "The model to use for this message",
+              "type": "string"
+            },
             "generative": {
               "default": true,
               "description": "Whether AI is allowed to make changes to this form",
@@ -53,6 +57,10 @@
           "additionalProperties": false,
           "description": "Message definition",
           "properties": {
+            "model": {
+              "description": "The model to use for this message",
+              "type": "string"
+            },
             "prompts": {
               "description": "Prompts allowed for this message. If not defined, the AI will look for a prompt with the same name as the message.",
               "items": {
