@@ -15,7 +15,7 @@
       ],
       "items": {
         "type": "string",
-        "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+        "pattern": "^[a-z]{2}[-_][A-Z]{2}$"
       }
     },
     "forms": {
