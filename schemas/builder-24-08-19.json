@@ -90,37 +90,6 @@
             },
             "objects": {
               "$ref": "#/properties/objects"
-            },
-            "relations": {
-              "additionalProperties": false,
-              "description": "Relations between objects",
-              "patternProperties": {
-                ".*": {
-                  "additionalProperties": false,
-                  "properties": {
-                    "forms": {
-                      "$ref": "#/properties/forms"
-                    },
-                    "messages": {
-                      "$ref": "#/properties/messages"
-                    },
-                    "targets": {
-                      "description": "Objects that can be targeted by this relation",
-                      "items": {
-                        "type": "string"
-                      },
-                      "type": [
-                        "array"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "targets"
-                  ],
-                  "type": "object"
-                }
-              },
-              "type": "object"
             }
           },
           "type": "object"
