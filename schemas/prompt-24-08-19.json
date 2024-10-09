@@ -28,9 +28,9 @@
           "description",
           "content"
         ],
-        "type": "object"
+        "type": ["object", "string"]
       },
-      "type": "array"
+      "type": ["array", "string"]
     },
     "prompt": {
       "description": "The prompt for generating the output.",
@@ -42,7 +42,7 @@
       "definitions": {
         "nonNegativeInteger": {
           "minimum": 0,
-          "type": "integer"
+          "type": ["integer", "string"]
         },
         "nonNegativeIntegerDefault0": {
           "allOf": [
@@ -59,7 +59,7 @@
             "$ref": "#/properties/schema"
           },
           "minItems": 1,
-          "type": "array"
+          "type": ["array", "string"]
         },
         "simpleTypes": {
           "enum": [
@@ -77,7 +77,7 @@
           "items": {
             "type": "string"
           },
-          "type": "array",
+          "type": ["array", "string"],
           "uniqueItems": true
         }
       },
@@ -125,7 +125,7 @@
             "$ref": "#/properties/schema"
           },
           "default": {},
-          "type": "object"
+          "type": ["object", "string"]
         },
         "dependencies": {
           "additionalProperties": {
@@ -138,7 +138,7 @@
               }
             ]
           },
-          "type": "object"
+          "type": ["object", "string"]
         },
         "description": {
           "type": "string"
@@ -149,18 +149,18 @@
         "enum": {
           "items": true,
           "minItems": 1,
-          "type": "array",
+          "type": ["array", "string"],
           "uniqueItems": true
         },
         "examples": {
           "items": true,
-          "type": "array"
+          "type": ["array", "string"]
         },
         "exclusiveMaximum": {
-          "type": "number"
+          "type": ["number", "string"]
         },
         "exclusiveMinimum": {
-          "type": "number"
+          "type": ["number", "string"]
         },
         "format": {
           "type": "string"
@@ -180,7 +180,7 @@
           "default": true
         },
         "maximum": {
-          "type": "number"
+          "type": ["number", "string"]
         },
         "maxItems": {
           "$ref": "#/properties/schema/definitions/nonNegativeInteger"
@@ -192,7 +192,7 @@
           "$ref": "#/properties/schema/definitions/nonNegativeInteger"
         },
         "minimum": {
-          "type": "number"
+          "type": ["number", "string"]
         },
         "minItems": {
           "$ref": "#/properties/schema/definitions/nonNegativeIntegerDefault0"
@@ -205,7 +205,7 @@
         },
         "multipleOf": {
           "exclusiveMinimum": 0,
-          "type": "number"
+          "type": ["number", "string"]
         },
         "not": {
           "$ref": "#/properties/schema"
@@ -225,21 +225,21 @@
           "propertyNames": {
             "format": "regex"
           },
-          "type": "object"
+          "type": ["object", "string"]
         },
         "properties": {
           "additionalProperties": {
             "$ref": "#/properties/schema"
           },
           "default": {},
-          "type": "object"
+          "type": ["object", "string"]
         },
         "propertyNames": {
           "$ref": "#/properties/schema"
         },
         "readOnly": {
           "default": false,
-          "type": "boolean"
+          "type": ["boolean", "string"]
         },
         "required": {
           "$ref": "#/properties/schema/definitions/stringArray"
@@ -260,18 +260,18 @@
                 "$ref": "#/properties/schema/definitions/simpleTypes"
               },
               "minItems": 1,
-              "type": "array",
+              "type": ["array", "string"],
               "uniqueItems": true
             }
           ]
         },
         "uniqueItems": {
           "default": false,
-          "type": "boolean"
+          "type": ["boolean", "string"]
         },
         "writeOnly": {
           "default": false,
-          "type": "boolean"
+          "type": ["boolean", "string"]
         }
       },
       "title": "Core prompt schema meta-schema",

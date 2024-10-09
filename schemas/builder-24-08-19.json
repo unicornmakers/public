@@ -14,9 +14,13 @@
         "en-US"
       ],
       "items": {
-        "type": "string",
-        "pattern": "^[a-z]{2}[-_][A-Z]{2}$"
+        "type": "string"
       }
+    },
+    "useGlobalEnv": {
+      "default": true,
+      "description": "Whether to use a shared, read-only environment that can be accessed by users.",
+      "type": "boolean"
     },
     "forms": {
       "description": "Forms definitions",
