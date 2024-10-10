@@ -17,10 +17,12 @@
         "type": "string"
       }
     },
-    "useGlobalEnv": {
-      "default": true,
-      "description": "Whether to use a shared, read-only environment that can be accessed by users.",
-      "type": "boolean"
+    "globalEnvironments": {
+      "type": "array",
+      "description": "Shared, read-only environment definitions",
+      "items": {
+        "type": "string"
+      }
     },
     "forms": {
       "description": "Forms definitions",
