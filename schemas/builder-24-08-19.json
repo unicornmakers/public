@@ -17,9 +17,9 @@
         "type": "string"
       }
     },
-    "globalEnvironments": {
+    "globalAccounts": {
       "type": "array",
-      "description": "Shared, read-only environment definitions",
+      "description": "Shared, read-only accounts",
       "items": {
         "type": "string"
       }
