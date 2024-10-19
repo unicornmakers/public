@@ -11,6 +11,12 @@
       "additionalProperties": false,
       "description": "User wallets",
       "properties": {
+        "startingCredits": {
+          "default": 0,
+          "description": "Number of credits a new user starts with",
+          "minimum": 0,
+          "type": "number"
+        },
         "costs": {
           "additionalProperties": false,
           "description": "Costs for user wallets",
